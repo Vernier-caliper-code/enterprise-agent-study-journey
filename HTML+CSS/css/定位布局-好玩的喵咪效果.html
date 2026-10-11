@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>猫咪效果</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ol,
+    ul {
+      list-style: none;
+    }
+
+    .box {
+      overflow: hidden;
+      position: relative;
+      width: 1000px;
+      margin: 100px auto;
+    }
+
+    .box::before,
+    .box::after {
+      /* 属于行内元素，但是加了定位，则可以直接给宽度和高度 */
+      position: absolute;
+      left: 0;
+      content: '';
+      width: 100%;
+      height: 100px;
+      background-color: #fff;
+      border-radius: 50%;
+      text-align: center;
+      color: #000;
+    }
+
+    .box::before {
+      top: -50px;
+      content: '可爱的小猫咪，滚动鼠标滚轮可以查看哦~~~';
+      line-height: 120px;
+    }
+
+    .box::after {
+      bottom: -50px;
+      content: '你喜欢我们吗？ 点击可以查看哦！';
+      line-height: 60px;
+    }
+
+    .box ul {
+      display: flex;
+      gap: 15px;
+      /* 水平滚动条 */
+      /* overflow-x: scroll; */
+      /* 隐藏滚动条 */
+      scrollbar-width: none;
+      /* 平滑滚动 */
+      scroll-behavior: smooth;
+    }
+
+    /* 让谷歌或者苹果浏览器隐藏滚动条 */
+    .box ul::-webkit-scrollbar {
+      display: none;
+    }
+
+    .box ul li {
+      /* width: 200px; */
+      /* 不拉伸， 不伸缩  初始值设置为200px  */
+      flex: 0 0 200px;
+    }
+
+    .box ul li img {
+      width: 100%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box">
+    <ul>
+      <li><a href="#"><img src="./img/cat1.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat2.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat3.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat4.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat5.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat6.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat7.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat8.jpeg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat9.jpeg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat10.jpeg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat11.jpeg" alt=""></a></li>
+      <li><a href="#"><img src="./img/cat12.jpeg" alt=""></a></li>
+    </ul>
+  </div>
+
+  <script>
+    // 获取可滚动的容器
+    const scrollContainer = document.querySelector('.box ul');
+    // 监听鼠标滚轮事件
+    scrollContainer.addEventListener('wheel', (e) => {
+      // 阻止默认的垂直滚动行为
+
+      e.preventDefault();
+      // 根据滚轮的垂直滚动量（deltaY）调整横向滚动量（scrollLeft）
+      // 乘以系数（如 1.5）可调整滚动灵敏度
+      scrollContainer.scrollLeft += e.deltaY * 1.5;
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,301 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.back {
+  position: fixed;
+  right: 1o0px;
+  bottom: 100px;
+  width: 40px;
+  height: 40px;
+  background-color: pink;
+}
+
+.entry {
+  height: 500px;
+  background-color: #f5f5f5;
+}
+
+.entry .w {
+  position: relative;
+  height: 100%;
+  background: url(../uploads/banner1.png) no-repeat;
+}
+
+.category {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 250px;
+  height: 500px;
+  background: rgba(0, 0, 0, 0.42);
+}
+
+.category ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 12px;
+  color: #fff;
+}
+
+.category ul li:hover {
+  background-color: #00be9a;
+}
+
+.category ul li a {
+  color: #fff;
+  font-size: 14px;
+}
+
+.category ul li a:first-child {
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.banner {
+  position: relative;
+}
+
+.banner .circle {
+  display: flex;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.banner .circle li {
+  width: 14px;
+  height: 14px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin: 0 8px;
+}
+
+.banner .circle li:hover {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.5);
+  background-color: #fff;
+}
+
+.banner .next,
+.banner .prev {
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-top: -30px;
+}
+
+.banner .next {
+  right: 0;
+}
+
+.banner .prev {
+  left: 250px;
+}
+
+.banner .next i,
+.banner .prev i {
+  text-align: center;
+  line-height: 60px;
+  color: #fff;
+  font-size: 35px;
+}
+
+/* 新鲜好物 */
+.box-hd {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 112px;
+}
+
+.box-hd h2 {
+  font-size: 30px;
+}
+
+.box-hd h2 small {
+  font-size: 16px;
+  color: #a1a1a1;
+  margin-left: 30px;
+}
+
+.box-hd a {
+  color: #a1a1a1;
+  font-size: 16px;
+}
+
+.box-bd ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-bd ul li {
+  width: 304px;
+  height: 404px;
+  background-color: #eef9f4;
+  text-align: center;
+}
+
+.box-bd ul li a {
+  display: block;
+  height: 100%;
+}
+
+.box-bd ul li img {
+  width: 304px;
+  height: 304px;
+}
+
+.box-bd ul li .title {
+  margin: 18px 0 15px;
+  font-size: 20px;
+  padding: 0 25px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.box-bd ul li .price {
+  font-size: 22px;
+  color: #aa2113;
+}
+.box-bd ul li .price small {
+  font-size: 18px;
+}
+
+/* 人气模块 */
+.hot .box-bd ul li {
+  background-color: #fff;
+}
+
+.hot {
+  margin-bottom: 60px;
+}
+
+/* 服饰模块制作 */
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 102px;
+  padding-top: 10px;
+}
+
+.head h2 {
+  font-size: 30px;
+}
+
+.head .head-right {
+  display: flex;
+}
+
+.head .head-right ul {
+  display: flex;
+  gap: 10px;
+}
+
+.head .head-right ul li a {
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.head .head-right .more {
+  font-size: 16px;
+  color: #a1a1a1;
+  margin-left: 60px;
+}
+
+.head .head-right ul li a {
+  padding: 3px 8px;
+  border-radius: 5px;
+}
+
+.head .head-right ul li a:hover {
+  color: #fff;
+  background-color: #00be9a;
+}
+
+.body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.body .body-l {
+  width: 248px;
+  height: 610px;
+  background-color: pink;
+}
+
+.body .body-r {
+  display: flex;
+  flex-wrap: wrap;
+  width: 968px;
+  height: 610px;
+}
+
+.body .body-r li {
+  width: 242px;
+  height: 305px;
+  padding: 10px 21px 0;
+}
+
+.body .body-r li img {
+  width: 200px;
+  height: 180px;
+}
+
+.body .body-r li .title {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.body .body-r li .price {
+  font-size: 22px;
+  color: #af2f22;
+}
+
+.body .body-r li small {
+  font-size: 16px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.news {
+  margin-bottom: 60px;
+}
+
+.news ul {
+  display: flex;
+  gap: 12px;
+}
+
+.news ul li {
+  flex: 1;
+  height: 355px;
+}
+
+.news ul li img {
+  width: 100%;
+}
+
+.news .con {
+  height: 67px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  font-size: 14px;
+  color: #666666;
+}
+
+.news .con .like {
+  margin-right: 20px;
+}
