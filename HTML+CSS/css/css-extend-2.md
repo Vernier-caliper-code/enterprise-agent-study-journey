@@ -9,6 +9,10 @@
 3. [display 转换](#3-display-转换)
 4. [Flexbox 弹性布局](#4-flexbox-弹性布局)
 5. [定位布局](#5-定位布局)
+6. [Grid 网格布局](#6-grid-网格布局)
+7. [多列布局](#7-多列布局)
+8. [鼠标样式](#8-鼠标样式)
+9. [CSS 书写顺序](#9-css-书写顺序)
 
 ---
 
@@ -147,3 +151,58 @@ position: sticky;
 ```css
 z-index: 1; /* 值越大，层级越高 */
 ```
+
+## 6. Grid 网格布局
+
+参数：
+
+```css
+display: grid;
+
+grid-template-columns: ;
+grid-template-rows: ;
+
+justify-content: ; align-content: ;
+justify-items: ; align-items: ;
+
+gap: 20px; /* 行列之间 20px */
+
+grid-auto-flow: column; /* 自动填充方向 */
+
+/* 子盒子：跨列、跨行 */
+grid-column: 1/3;
+grid-row: 1/3;
+```
+
+核心代码：
+
+```css
+grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); /* fr：表示各占一份 */
+```
+
+
+## 7. 多列布局
+
+适用场景：长文章分栏、图片瀑布流。
+
+```css
+column-count: 3;              /* 分栏数量 */
+column-gap: 20px;             /* 列间距 */
+column-rule: 1px solid red;   /* 列之间的分割线 */
+break-inside: avoid-column;   /* 避免列内换行（多列布局默认会自动分割） */
+```
+
+## 8. 鼠标样式
+
+```css
+cursor: pointer;      /* 指尖向下的小手 */
+cursor: text;         /* 文本输入光标 */
+cursor: wait;         /* 等待 */
+cursor: not-allowed;  /* 禁止 */
+cursor: grab;         /* 可抓取 */
+cursor: grabbing;     /* 抓取中 */
+```
+
+## 9. CSS 书写顺序
+
+布局 → 盒模型 → 视觉 → 交互 → 其他
