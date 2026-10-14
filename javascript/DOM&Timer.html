@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .item {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+      }
+      .change {
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="block">默认内容</div>
+    <div id="container">
+      <p>默认内容</p>
+      <p>默认内容</p>
+      <p class="item">默认内容</p>
+      <p>默认内容</p>
+      <p>默认内容</p>
+    </div>
+
+    <!-- <script src="js基础.js"></script> -->
+    <script>
+      // 1.元素的获取
+      var block = document.getElementById("block");
+      block.textContent = "修改后的内容";
+
+      var contents = document.getElementsByTagName("p");
+
+      // 这里获取的是所有满足条件的
+      var contents = document.querySelectorAll("#container p");
+
+      // 这里只获取了第一个元素
+      var secondItem = document.querySelector(".item");
+
+      secondItem.previousElementSibling.textContent = "小牛";
+      secondItem.nextElementSibling.textContent = "小龙";
+      var container = secondItem.parentNode;
+
+      var items = container.children;
+
+      // 2. 样式处理
+      var block = document.querySelector("#block");
+      block.style.width = "100px";
+      block.className = "change";
+
+      //3. 文本处理
+      block.innerHTML = "我是你爹 <h1>小牛</h1>";
+
+      // 4. 事件处理
+
+      // block.onclick = function () {
+      //   console.log(alert("点击了"));
+      // };
+
+      // block.onclick = function () {
+      //   alert("点击了2");
+      // };
+      // 一般情况下使用这种事件监听器，不会覆盖。
+      block.addEventListener("click", function () {
+        alert("点击了3");
+      });
+
+      //5. 定时器
+
+      // setTimeout(function () {
+      //   console.log("2秒后执行一次");
+      // }, 2000);
+
+      var timer = setInterval(function () {
+        console.log("间隔2s输出一次");
+      }, 2000);
+
+      setTimeout(function () {
+        clearInterval(timer);
+      }, 6000);
+    </script>
+  </body>
+</html>

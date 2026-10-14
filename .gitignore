@@ -39,6 +39,10 @@ chroma_db/
 # Node/Vite 前端
 node_modules/
 dist/
+dist-ssr/
+.vite/
+.pnpm-store/
+*.local
 .env.local
 .env.*.local
 
